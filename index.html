@@ -6,6 +6,19 @@
     <meta name="theme-color" content="#006eff" />
     <link rel="icon" href="favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Jost' rel='stylesheet'>
+    <script>
+      (function () {
+        try {
+          var key = 'rentverse-theme';
+          var stored = localStorage.getItem(key);
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
     <script>navigator.serviceWorker.register("/service-worker.js")</script> 
     <link rel="manifest" href="/manifest.json" />  
     <title>RentVerse</title>
