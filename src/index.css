@@ -10,7 +10,8 @@
   }
   
   body {
-    @apply font-sans text-secondary-800 bg-secondary-50;
+    @apply font-sans text-secondary-800 bg-secondary-50 transition-colors duration-200;
+    @apply dark:text-secondary-100 dark:bg-secondary-900;
   }
 }
 
@@ -21,17 +22,27 @@
   
   .btn {
     @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+    @apply dark:focus:ring-offset-secondary-900;
   }
   
   .btn-secondary {
     @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+    @apply dark:text-primary-200 dark:bg-primary-950 dark:hover:bg-primary-900 dark:focus:ring-offset-secondary-900;
   }
   
   .input {
     @apply block w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm;
+    @apply dark:border-secondary-600 dark:bg-secondary-800 dark:text-secondary-100;
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden;
+    @apply bg-white rounded-lg shadow-md overflow-hidden dark:bg-secondary-800 dark:shadow-black/20;
+  }
+
+  .theme-toggle {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full
+      text-secondary-600 hover:text-primary-600 hover:bg-secondary-100
+      dark:text-secondary-300 dark:hover:text-primary-400 dark:hover:bg-secondary-800
+      transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500;
   }
 }
